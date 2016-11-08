@@ -1,3 +1,4 @@
+# coding: utf-8
 import re
 from random import randint
 from datetime import datetime
@@ -6,18 +7,18 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.core.urlresolvers import reverse_lazy
 from django.core.management import call_command
-from core.helpers.slack import Message
+from quero_cafe.core.helpers.slack import Message
 
 from django.contrib.auth.models import User
-from coffee_rotation.models.Cycle import Cycle
-from coffee_rotation.models.Turn import Turn
+from quero_cafe.coffee_rotation.models.Cycle import Cycle
+from quero_cafe.coffee_rotation.models.Turn import Turn
 
 
 def list(request):
 
-    if not request.user.is_authenticated:
-        return redirect('%s?next=%s' % (reverse_lazy('admin:login'), request.path))
-
+    #if not request.user.is_authenticated:
+    #    return redirect('%s?next=%s' % (reverse_lazy('admin:login'), request.path))
+    redirect('%s?next=%s' % (reverse_lazy('admin:login'), request.path))	
     cycle = Cycle.objects.last()
 
     if cycle is None:

@@ -1,6 +1,7 @@
+# coding: utf-8
 from django.db import models
 
-from coffee_rotation.models.Cycle import Cycle
+from quero_cafe.coffee_rotation.models.Cycle import Cycle
 from django.contrib.auth.models import User
 
 

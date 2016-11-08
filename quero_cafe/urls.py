@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # COLABORADORES
-    url(r'^', include('coffee_rotation.urls', namespace='')),
+    url(r'^', include('quero_cafe.coffee_rotation.urls', namespace='')),
 
     # HOME
     url(r'^', RedirectView.as_view(url=reverse_lazy('list'))),

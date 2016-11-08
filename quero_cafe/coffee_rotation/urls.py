@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from coffee_rotation import views
+from quero_cafe.coffee_rotation import views
 
 urlpatterns = [
     url(r'^list', views.list, name='list'),
