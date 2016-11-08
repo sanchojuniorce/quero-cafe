@@ -1,0 +1,24 @@
+<div id="modal-delete" class="modal fade" tabindex="-1" role="dialog">
+    <form method="post" action="">
+
+        {% csrf_token %}
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center">Justifique o por que do usuário estar sendo removido</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <textarea rows="10" name="justification" id="justification" class="form-control" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Remover</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,7 @@
+<ul class="usuarios list-group">
+    {% for usuario in not_calleds %}
+    <li class="list-group-item text-center">
+        {{ usuario.first_name }} {{ usuario.last_name }}
+    </li>
+    {% endfor %}
+</ul>

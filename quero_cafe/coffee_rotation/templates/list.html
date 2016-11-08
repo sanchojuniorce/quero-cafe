@@ -1,0 +1,36 @@
+{% extends 'frontend/layout.html' %}
+
+{% load static from staticfiles %}
+
+{% block page_title %} Colaboradores {% endblock page_title %}
+
+{% block css %}
+     <link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock css %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/list.js' %}"></script>
+{% endblock js %}
+
+{% block content %}
+
+    {% include 'partials/modal/delete.html' %}
+    {% include 'partials/modal/justificativa.html' %}
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <h2>Faltantes</h2>
+            {% include 'partials/faltantes.html' %}
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h2>Turnos</h2>
+            {% include 'partials/turnos.html' %}
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a class="btn btn-default" href="{% url 'choose_randomly' %}"><i class="fa fa-random" aria-hidden="true"></i> Escolher Aleatório</a>
+        <a class="btn btn-default" href="{% url 'set_as_voluntary' %}"><i class="fa fa-hand-spock-o" aria-hidden="true"></i> Voluntariar-se</a>
+    </div>
+
+{% endblock content %}

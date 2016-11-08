@@ -1,0 +1,15 @@
+<ul class="usuarios list-group">
+    {% for turn in turns %}
+    <li class="list-group-item text-center {% if turn.is_removed %}text-danger{% endif %}">
+        <b>{{ turn.user.first_name }} {{ turn.user.last_name }}</b>
+        <br/>
+        <small>{{ turn.get_type }} em {{ turn.presenter_date }}</small>
+
+        {% if not turn.is_removed %}
+        <button type="button" class="btn btn-xs btn-danger pull-right show-modal-delete" data-action="{% url 'remove_turn' turn.id %}"><i class="fa fa-times"></i></button>
+        {% else %}
+        <button type="button" class="btn btn-xs btn-default pull-right show-modal-justificativa" data-justificativa="{{ turn.justification }}"><i class="fa fa-comment-o"></i></button>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
